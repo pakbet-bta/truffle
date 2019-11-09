@@ -3,6 +3,13 @@ pragma solidity ^0.5.11;
 import "./pakbet_usecaseV2.sol";
 
 contract PakbetIssuer is PakbetUseCase {
+    
+    /**
+     * @return the number of accredited institution
+     */ 
+    function getIssuerCount() external view onlyOwner returns (uint256) {
+        return issuers.length;
+    }
 
     /**
      * @notice Add training institution to the blockchain.
