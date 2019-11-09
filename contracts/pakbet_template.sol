@@ -1,4 +1,4 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.5.11;
 
 import "./pakbet_issuer.sol";
 
@@ -11,7 +11,7 @@ contract PakbetTemplate is PakbetIssuer {
      * @param _title certificate description e.g. Certificate of Attendance.
      * @param _description certificate description e.g. BTA Expert Program
      */
-    function createTemplate(string _title, string _description) external isAccredited(msg.sender) {
+    function createTemplate(string calldata  _title, string calldata _description) external isAccredited(msg.sender) {
         uint256 index = addressToIssuer[msg.sender];
         bytes32 hashCode = keccak256(abi.encode(_title, _description, issuers[index].name));
         _createTemplate(msg.sender, _title, _description, hashCode);
@@ -21,7 +21,7 @@ contract PakbetTemplate is PakbetIssuer {
       * @param _id uint256 value corresponding to the index position of the training institution
       * @return an array containing the template ids created template by the institution 
      */
-    function getIssuedTemplates(uint256 _id) external view onlyOwner returns(uint256[])  {
+    function getIssuedTemplates(uint256 _id) external view onlyOwner returns(uint256[] memory)  {
         require(_id < issuers.length);
         uint256[] memory result = new uint256[](issuers[_id].templatesCreated.length);
         
@@ -33,8 +33,8 @@ contract PakbetTemplate is PakbetIssuer {
 
     function _createTemplate(
         address _creator, 
-        string _title, 
-        string _description, 
+        string memory _title, 
+        string memory _description, 
         bytes32 _hashCode
     )
         internal isNotExistingTemplate(_hashCode) 
@@ -53,5 +53,3 @@ contract PakbetTemplate is PakbetIssuer {
         emit NewTemplate(_creator, _title, _description);
     }
 }
-
-

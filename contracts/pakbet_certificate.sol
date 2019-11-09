@@ -53,4 +53,3 @@ contract PakbetCertificate is PakbetTemplate {
         students[studentIndex].certificatesOwned.push(id);
     }
 }
-
