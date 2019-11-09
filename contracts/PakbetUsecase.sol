@@ -75,7 +75,4 @@ contract PakbetUseCase is Ownable {
         require (issuers[index].active);
         _;
     }
-}    
-    
-    
-
+}

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,17 +9,35 @@
     <title>Certi-check by Pakbet
     </title>
  
-    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
   </head>
 
+
+ 
+
+
+
+
+
   <body>
+   
+  
+		
       <script src="js/check.js">
+	 
 	  </script>
+
+
+      
         <h1>Certi-check by Pakbet
         </h1>
         <div class="description">
         </div>
+     
+	
+	 
+
 	  <div class="row">
 			<div class="column left" style="background-color:#aaa;">
 			
@@ -71,16 +90,22 @@
 	  
 	 
 	  <script >
+
 	  	 function changeData(newURL) {
  
 	document.getElementById("docu").setAttribute('src', newURL);
 	
 	window.onload
+
 }
+
+
+
 function getFilePath(){
      $('input[type=file]').change(function () {
 		 var filePath=$('#input').val(); 
 		 filePath=document.getElementById("input").files[0].name;
+
 		 changeData(filePath);
 		 
      });
@@ -102,7 +127,9 @@ function getFilePath(){
 	  function getHash()
 	  {
 			  var hashText = document.getElementById('output').value;
+
 	}  
+
   </script>
      
 	 <script src="https://cdn.jsdelivr.net/gh/emn178/js-sha256/build/sha256.min.js"></script>

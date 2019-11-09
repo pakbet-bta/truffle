@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -79,18 +80,23 @@
 
 
 <script >
+
 function ViewandCheck()
 {
 	getFilePath();
 	checkHash();
 }
 	  
+
+
 function changeData(newURL) {
  
 	document.getElementById("docu").setAttribute('data', newURL);
 	
 	window.onload
+
 }	  
+
 function getFilePath(){
      $('input[type=file]').change(function () {
 		 var filePath=$('#input').val(); 
@@ -100,6 +106,8 @@ function getFilePath(){
 		 
      });
 }
+
+
 	  function getHash()
 	  {
 			  var hashText = document.getElementById('output').value;
@@ -108,6 +116,8 @@ function getFilePath(){
 
 
 <script>
+
+
 	function checkHash()
 	{
 	//		if (document.getElementById('output').value=="1acdb091a1c47352cf1cd918c380e93b50d15163dce3eb389bccfbbe38afd623")
@@ -117,7 +127,9 @@ function getFilePath(){
 			
 alert(document.getElementById('output').value);
 			
+
   }  
+
 </script>
 
      

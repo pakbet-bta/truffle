@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 pragma solidity ^0.5.0;
+=======
+pragma solidity ^0.5.11;
+>>>>>>> 7becc0d07fce5c3df516b22d6e4e01fe936afc67
 
 /**
  * @title SafeMath

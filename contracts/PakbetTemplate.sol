@@ -11,7 +11,11 @@ contract PakbetTemplate is PakbetIssuer {
      * @param _title certificate description e.g. Certificate of Attendance.
      * @param _description certificate description e.g. BTA Expert Program
      */
+<<<<<<< HEAD:contracts/PakbetTemplate.sol
     function createTemplate(string calldata _title, string calldata _description) external isAccredited(msg.sender) {
+=======
+    function createTemplate(string calldata  _title, string calldata _description) external isAccredited(msg.sender) {
+>>>>>>> 7becc0d07fce5c3df516b22d6e4e01fe936afc67:contracts/pakbet_template.sol
         uint256 index = addressToIssuer[msg.sender];
         bytes32 hashCode = keccak256(abi.encode(_title, _description, issuers[index].name));
         _createTemplate(msg.sender, _title, _description, hashCode);
@@ -53,5 +57,3 @@ contract PakbetTemplate is PakbetIssuer {
         emit NewTemplate(_creator, _title, _description);
     }
 }
-
-
