@@ -1,4 +1,4 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.5.11;
 
 import "./pakbet_certificate.sol";
 
@@ -19,7 +19,7 @@ contract PakbetStudent is PakbetCertificate {
      * in the students[] array.
      * @return an array containing the certificate ids owned by the student.
      */ 
-    function getStudentCertificates(uint256 _id) external view returns(uint256[]) {
+    function getStudentCertificates(uint256 _id) external view returns(uint256[] memory) {
         require (students[_id].blockChainAccount == msg.sender);
         uint256[] memory result = new uint256[](students[_id].certificatesOwned.length);
         
@@ -68,6 +68,3 @@ contract PakbetStudent is PakbetCertificate {
 //1,"0x6a6f656c00000000000000000000000000000000000000000000000000000000","0x583031D1113aD414F02576BD6afaBfb302140225" 
 //2,"0x6a696d656e657a00000000000000000000000000000000000000000000000000","0x583031D1113aD414F02576BD6afaBfb302140225"
 //3,"0x4a6f656c204b6164656e61206664642064206600000000000000000000000000","0xdD870fA1b7C4700F2BD7f44238821C26f7392148"
-
-
-
