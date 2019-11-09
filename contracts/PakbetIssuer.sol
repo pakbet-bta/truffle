@@ -1,6 +1,6 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.5.0;
 
-import "./pakbet_usecaseV2.sol";
+import "./PakbetUsecase.sol";
 
 contract PakbetIssuer is PakbetUseCase {
 
@@ -10,7 +10,7 @@ contract PakbetIssuer is PakbetUseCase {
      * @param _issuerAddress Blockchain Address associated to the training institution.
      * @param _name Name of the training institution.
      */
-    function accreditIssuer(address _issuerAddress, string _name) external onlyOwner {
+    function accreditIssuer(address _issuerAddress, string calldata _name) external onlyOwner {
         _accreditIssuer(_issuerAddress, _name);
     }
     
@@ -34,7 +34,7 @@ contract PakbetIssuer is PakbetUseCase {
         issuers[_index].active = true;
     }
     
-    function _accreditIssuer(address _issuerAddress, string _name) internal isNotAccredited(_issuerAddress) {
+    function _accreditIssuer(address _issuerAddress, string memory _name) internal isNotAccredited(_issuerAddress) {
         uint256 id = issuers.length++;
         
         issuers[id].active = true;

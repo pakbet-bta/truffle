@@ -1,6 +1,5 @@
-pragma solidity ^0.4.25;
-
-import "./pakbet_template.sol";
+pragma solidity ^0.5.0;
+import "./PakbetTemplate.sol";
 
 contract PakbetCertificate is PakbetTemplate {
     

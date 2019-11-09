@@ -1,6 +1,6 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.5.0;
 
-import "./pakbet_certificate.sol";
+import "./PakbetCertificate.sol";
 
 contract PakbetStudent is PakbetCertificate {
     
@@ -19,7 +19,7 @@ contract PakbetStudent is PakbetCertificate {
      * in the students[] array.
      * @return an array containing the certificate ids owned by the student.
      */ 
-    function getStudentCertificates(uint256 _id) external view returns(uint256[]) {
+    function getStudentCertificates(uint256 _id) external view returns(uint256[] memory) {
         require (students[_id].blockChainAccount == msg.sender);
         uint256[] memory result = new uint256[](students[_id].certificatesOwned.length);
         

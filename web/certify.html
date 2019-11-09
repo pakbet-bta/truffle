@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Certi-check">
+    <title>Certi-check by Pakbet
+    </title>
+ 
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+  </head>
+
+  <body>
+      <script src="js/check.js">
+	  </script>
+        <h1>Certi-check by Pakbet
+        </h1>
+        <div class="description">
+        </div>
+	  <div class="row">
+			<div class="column left" style="background-color:#aaa;">
+			
+
+					<h1>Certify Document
+						</h1>
+
+					<div class="input">
+							<div id="droppable-zone" ondragover="getFilePath()">
+							  <div id="droppable-zone-wrapper">
+                <div id="droppable-zone-text">Drop File Here</div>
+                
+
+
+							  </div>
+							  <input id="input" type="file" onchange="getFilePath()" placeholder="Input2" class="droppable-file" readonly>
+					  
+							</div>
+						  </div>
+						  
+						  
+              <p></p>
+						  <div class="output">
+              <input id="output" type="text"></input>
+              
+              <p></p>
+
+              <button id="submit" type="button" onclick="submitHash()">Submit</button>
+              <p></p>
+              <input id="status" type="text" readyonly></input>
+						   
+						  </div>
+
+
+			</div>
+			<div class="column right" style="background-color:#bbb;">
+			 
+					<embed id="docu" src="" type="application/pdf" width="100%" height="100%">
+					
+          </embed>
+			
+
+
+			</div>
+		  </div>
+
+
+
+	  
+	  
+	 
+	  <script >
+	  	 function changeData(newURL) {
+ 
+	document.getElementById("docu").setAttribute('src', newURL);
+	
+	window.onload
+}
+function getFilePath(){
+     $('input[type=file]').change(function () {
+		 var filePath=$('#input').val(); 
+		 filePath=document.getElementById("input").files[0].name;
+		 changeData(filePath);
+		 
+     });
+}
+	  </script>
+     
+    <script>
+     function submitHash()
+     {
+         alert(document.getElementById('output').value);
+       	document.getElementById("status").setAttribute('value', "sucess");
+   }  
+ 
+   </script>
+
+
+
+	<script>
+	  function getHash()
+	  {
+			  var hashText = document.getElementById('output').value;
+	}  
+  </script>
+     
+	 <script src="https://cdn.jsdelivr.net/gh/emn178/js-sha256/build/sha256.min.js"></script>
+	 <script>method = sha256;</script>
+
+	  </html>
