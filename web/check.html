@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Certi-check">
+    <title>Certi-check by Pakbet
+    </title>
+ 
+   <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+  </head>
+
+
+ 
+
+
+
+
+
+  <body>
+   
+  
+		
+      <script src="js/check.js">
+	 
+	  </script>
+
+
+      
+        <h1>Certi-check by Pakbet
+        </h1>
+        <div class="description">
+        </div>
+     
+	
+	 
+
+	  <div class="row">
+			<div class="column left" style="background-color:#aaa;">
+			
+
+					<h1>Check Document
+						</h1>
+
+					<div class="input">
+							<div id="droppable-zone">
+							  <div id="droppable-zone-wrapper">
+								<div id="droppable-zone-text">Drop File Here</div>
+							  </div>
+							  <input id="input" type="file" onchange="ViewandCheck()" placeholder="Input2" class="droppable-file" readonly>
+					  
+							</div>
+						  </div>
+						  
+						  
+				  
+						  <div class="output">
+							<input id="output" type="text"></input>
+							
+					  
+						   
+						  </div>
+
+
+			</div>
+			<div class="column right" style="background-color:#bbb;">
+			 
+					<object id="docu" data="" type="application/pdf" width="100%" height="100%">
+						<p>Alternative text - include a link <a href="myfile.pdf">to the PDF!</a></p>
+					  </object>
+			
+
+
+			</div>
+		  </div>
+
+
+
+<script >
+
+function ViewandCheck()
+{
+	getFilePath();
+	checkHash();
+}
+	  
+
+
+function changeData(newURL) {
+ 
+	document.getElementById("docu").setAttribute('data', newURL);
+	
+	window.onload
+
+}	  
+
+function getFilePath(){
+     $('input[type=file]').change(function () {
+		 var filePath=$('#input').val(); 
+		 filePath=document.getElementById("input").files[0].name;
+//alert (filePath);
+		 changeData(filePath);
+		 
+     });
+}
+
+
+	  function getHash()
+	  {
+			  var hashText = document.getElementById('output').value;
+	}  
+  </script>
+
+
+<script>
+
+
+	function checkHash()
+	{
+	//		if (document.getElementById('output').value=="1acdb091a1c47352cf1cd918c380e93b50d15163dce3eb389bccfbbe38afd623")
+	//		{
+// alert("Legit");
+	//		}
+			
+alert(document.getElementById('output').value);
+			
+
+  }  
+
+</script>
+
+     
+	 <script src="https://cdn.jsdelivr.net/gh/emn178/js-sha256/build/sha256.min.js"></script>
+	 <script>method = sha256;</script>
+
+	  </html>
